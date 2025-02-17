@@ -7,6 +7,8 @@ This document provides a comprehensive guide to the Azure Data Factory (ADF) pip
 
 ## 1. Architecture Overview
 
+![System Architecture](/architecture/high_level_architecture.png)
+
 ### 1.1 High-Level Design
 The solution consists of the following major components:
 

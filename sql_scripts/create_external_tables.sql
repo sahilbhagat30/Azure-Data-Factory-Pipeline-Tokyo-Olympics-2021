@@ -150,3 +150,63 @@ GO
 
 -- Verify External Tables
 SELECT * FROM sys.external_tables;
+
+-- Create a schema for views if it doesn’t exist
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'vw')
+    EXEC('CREATE SCHEMA vw');
+GO
+
+-- Create a view for the teams table
+CREATE VIEW vw.teams AS
+SELECT 
+    TeamName, 
+    Discipline, 
+    Country, 
+    Total_Events
+FROM dbo.teams;
+GO
+
+-- Create a view for the medals table
+CREATE VIEW vw.medals AS
+SELECT 
+    Rank, 
+    Team_Country, 
+    Gold,
+    Silver,
+    Bronze,
+    Total,
+    Rank_by_Total,
+    Rank_By_Gold,
+    Rank_By_Silver,
+    Rank_By_Bronze
+FROM dbo.medals;
+GO
+
+-- Create a view for the athletes table
+CREATE VIEW vw.athletes AS
+SELECT 
+    PersonName, 
+    Country, 
+    Discipline
+FROM dbo.athletes;
+GO
+
+-- Create a view for the entries_gender table
+CREATE VIEW vw.entries_gender AS
+SELECT 
+    Discipline, 
+    Female, 
+    Male, 
+    Total
+FROM dbo.entries_gender;
+GO
+
+-- Create a view for the coaches table
+CREATE VIEW vw.coaches AS
+SELECT 
+    Name, 
+    Country, 
+    Discipline, 
+    Event
+FROM dbo.coaches;
+GO
