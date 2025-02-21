@@ -82,7 +82,7 @@ The solution consists of the following major components:
 
 ---
 
-## 4. **External Tables** (NEW SECTION)
+## 4. **External Tables**
 
 ### 4.1 What are External Tables?
 External tables allow querying data stored outside of Synapse, such as in **Azure Data Lake Storage (ADLS Gen2)**, without physically moving the data.
